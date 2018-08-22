@@ -1,4 +1,4 @@
-git config --global user.name "priyeshverma234"
+ git config --global user.name "priyeshverma234"
 git config --global user.email "priyeshverma234@gmail.com"
 git init - Create an empty git repository
 git add . - Add all files to the next commit/version
