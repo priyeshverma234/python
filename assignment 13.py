@@ -4,6 +4,6 @@
 
 import requests
 import json
-resp = requests.get("https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json&key=435251")
+resp = requests.get("https://api.forismatic.com/api/1.0/?met0hod=getQuote&lang=en&format=json&key=123456")
 data = json.loads(resp.text)
 print(data["quoteText"])
