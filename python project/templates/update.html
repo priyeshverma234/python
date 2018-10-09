@@ -59,14 +59,13 @@ input[type=submit] {
     </tr>
   </thead>
   <tbody style="border-style:solid;">
-   {% for items in d %}
+  
     <tr>
       <td><font color="black">{{items['student']}}</font></td>
       <td><input type="radio" name="{{items['_id']}}" value="Present">       </td>
       <td><input type="radio" name="{{items['_id']}}" value="Absent" checked></td>
     </tr>
-    {% endfor %}
-  </tbody>
+     </tbody>
 </table>
 <br>
 <button type="submit" class="btn btn-primary" > UPDATED DATA</button>
