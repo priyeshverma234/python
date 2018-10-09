@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style type="text/css">
+    body {
+      background-image: url("https://wallpaper-house.com/data/out/10/wallpaper2you_384771.jpg");
+      width:100%;
+      height:100vh;
+      background-attachment: fixed;
+      background-size: cover;
+
+}
+input[type=submit] {
+     background-color: #AARRGGBB;
+    border: none;
+    color: black;
+    padding: 14px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+   </style>
+ </head>
+
+<body >
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">ATTENDANCE INFO</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">HOME</a></li>
+        </ul>
+         <ul class="nav navbar-nav navbar-right">
+          <li><a href="{{url_for('logout')}}"><span class="glyphicon glyphicon-log-in"></span><b> LOGOUT</b></a></li>
+          </ul>
+        </ul>
+      </div>
+    </nav>
+
+<form action="" method="post">
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th ><font color="white"><h4>Student-Name</h4></font></th>
+      <th ><font color="white"><h4>Present</h4></font></th>
+      <th ><font color="white"><h4>Absent</h4></font></th>
+    </tr>
+  </thead>
+  <tbody style="border-style:solid;">
+   {% for items in d %}
+    <tr>
+      <td><font color="black">{{items['student']}}</font></td>
+      <td><input type="radio" name="{{items['_id']}}" value="Present">       </td>
+      <td><input type="radio" name="{{items['_id']}}" value="Absent" checked></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<br>
+<button type="submit" class="btn btn-primary" > UPDATED DATA</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style type="text/css">
+    body {
+      background-image: url("https://wallpaper-house.com/data/out/10/wallpaper2you_384771.jpg");
+      width:100%;
+      height:100vh;
+      background-attachment: fixed;
+      background-size: cover;
+
+}
+.button {
+    background-color: #AARRGGBB; /* Green */
+    border: none;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+    }
+   </style>
+ </head>
+
+<body >
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">ATTENDANCE INFO</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">HOME</a></li>
+        </ul>
+         <ul class="nav navbar-nav navbar-right">
+          <li><a href="{{url_for('logout')}}"><span class="glyphicon glyphicon-log-in"></span><b> LOGOUT</b></a></li>
+          </ul>
+        </ul>
+      </div>
+    </nav>
+
+<div class="container" style="margin-left: 190px; margin-right:200px">
+  <button class="button" ><a  href="{{ url_for('add', tname=tname)}}"><b>Add New Students</b></a></button>
+<button class="button"><a href="{{ url_for('date', tname=tname)}}"><b>Update the Record</b></a></button>
+
+</div>
+<br>
+<div style=" margin-right:280px ;margin-left :280px">
+<form action="" method="post" >
+    <div style="background: rgba(208,198,195,0.3); padding: 25px;border-radius: 4%">
+        <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col"><font color="white"><h4>Student-Name</h4></font></th>
+      <th scope="col"><font color="white"><h4>Present</h4></font></th>
+      <th scope="col"><font color="white"><h4>Absent</h4></font></th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for document in search %}
+    <tr style="border-style:solid;">
+      <td><font color="black">{{document['student']}}</font></td>
+      <td><input type="radio" name="{{document['_id']}}" value="Present" ></td>
+      <td><input type="radio" name="{{document['_id']}}" value="Absent" checked></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+    </div>
+    <input style="margin-left: 284px;" class="btn btn-primary" type="submit" name="submit">
+    <br>
+    <br>
+    </form>
+    <div class="alert alert-danger" role="alert">
+  {{msg}}
+</div>
+</div>
+
+</body>
+</head>
+</html>

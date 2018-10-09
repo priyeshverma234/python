@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Online-Attendance Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style type="text/css">
+    body {
+      background-image: url("https://wallpaper-house.com/data/out/10/wallpaper2you_384771.jpg");
+      width:100%;
+      height:100vh;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+input[type=submit] {
+     background-color: #AARRGGBB;
+    border: none;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+}
+   </style>
+  </head>
+</head>
+
+<table>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"><b>ATTENDANCE</b></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/"><b>Home</b></a></li>
+        </ul>
+         <ul class="nav navbar-nav navbar-right">
+          <li><a href="/"><span class="glyphicon glyphicon-log-in"></span><b>SIGNUP</b></a></li>
+          </ul>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container" style="padding-top: 20px;">
+        <div style="width: 30%;background: rgba(207,197,194,0.2); padding: 10px; border-radius: 7%;">
+            <form action="" method="post">
+                <div>
+                    <label for="username"><h3><font color="white">Username</font></h3></label><br>
+                    <input style="border: 0px;border-radius: 10px;font-size: 25px;" type="text" id="username" name="username">
+                </div>
+                <div class="form-group">
+                    <label for="password"><h3><font color="white">Password</font></h3></label><br>
+                    <input style="border: 0px;border-radius: 10px;font-size: 25px;" type="password" id="password" name="password">
+                </div>
+
+                <div>
+                    <input style="margin: 0 10px 0 10px;" type="radio" name="choice" value="teacher" checked><span style="font-size: 26px; color: white">Teacher</span>
+                    <input style="margin: 0 10px 0 10px;"type="radio" name="choice" value="student"><span style="font-size: 26px; color: white">Student</span>
+                </div>
+                <br>
+                <input type="submit" value="Login">
+
+            </form>
+        </div>
+        <br>
+        <span><font color="white">{{msg}}</font></span>
+    </div>
+
+</body>
+
+
+</body>
+
+</html>
